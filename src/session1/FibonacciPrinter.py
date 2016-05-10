@@ -34,34 +34,34 @@ class FibonacciPrinter:
     """
     This method only print the number and the following padding, do not print the padding prefix
     """
-    def __getNumPrint(self ,num):
-        resultStr=str(num)
+    def __getNumPrint(self , num):
+        resultStr = str(num)
         for i in range(len(str(num)), self.__eachWidth):
-            resultStr=resultStr+' '
+            resultStr = resultStr + ' '
         return resultStr
      
-    def __getNumPrintStr(self ,row , column):
+    def __getNumPrintStr(self , row , column):
         num = self.getNum(row, column)
         return self.__getNumPrint(num)
      
         
-    def getLinePrint(self ,row):
+    def getLinePrint(self , row):
         # First print the black characters     
-        tmpStr=''    
-        for i in range(0,self.getLeftWidth(row, 1)):
-            tmpStr = tmpStr+' '
+        tmpStr = ''    
+        for i in range(0, self.getLeftWidth(row, 1)):
+            tmpStr = tmpStr + ' '
                 
-        for j in range(1, row+1):
-            tmpStr = tmpStr + self.__getNumPrintStr(row,j)
+        for j in range(1, row + 1):
+            tmpStr = tmpStr + self.__getNumPrintStr(row, j)
         
-        #from here, start printing the last number
+        # from here, start printing the last number
         lastNumFib = self.getNumLast(row)
-        if lastNumFib!=0:
-            tmpStr=tmpStr+self.__getNumPrint(lastNumFib)
-        return tmpStr+os.linesep    
+        if lastNumFib != 0:
+            tmpStr = tmpStr + self.__getNumPrint(lastNumFib)
+        return tmpStr + os.linesep    
 
     def getAllLinesPrint(self):
-        result=''
+        result = ''
         for i in range(0, self.__totalRow):
-            result=result+str(self.getLinePrint(i+1))
+            result = result + str(self.getLinePrint(i + 1))
         return result

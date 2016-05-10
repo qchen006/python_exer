@@ -9,7 +9,7 @@ from session1.FibonacciPrinter import FibonacciPrinter
 
 totalRow = 4
 eachWidth = 2
-fibonacciPrinter = FibonacciPrinter(totalRow,eachWidth)
+fibonacciPrinter = FibonacciPrinter(totalRow, eachWidth)
 
 class Test(unittest.TestCase):
 
@@ -28,8 +28,8 @@ class Test(unittest.TestCase):
 #         self.assertEqual(fibonacciPrinter.getLeftWidth(totalRow, 1), 0, "")
 #         self.assertEqual(fibonacciPrinter.getLeftWidth(totalRow-1, 1),eachWidth/2, "")
         
-        #This following test depends on the total row and width   
-        self.assertEqual(fibonacciPrinter.getLeftWidth(2,2), 4, "")  
+        # This following test depends on the total row and width   
+        self.assertEqual(fibonacciPrinter.getLeftWidth(2, 2), 4, "")  
         
     def testGetNumLast(self):
         self.assertEqual(fibonacciPrinter.getNumLast(1), 0, "")

@@ -9,7 +9,7 @@ from session1.FibonacciPrinter import FibonacciPrinter
 
 totalRow = 17
 eachWidth = 8
-fibonacciPrinter = FibonacciPrinter(totalRow,eachWidth)
+fibonacciPrinter = FibonacciPrinter(totalRow, eachWidth)
 
 class Test(unittest.TestCase):
 
