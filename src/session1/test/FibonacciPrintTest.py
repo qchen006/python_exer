@@ -22,10 +22,4 @@ class Test(unittest.TestCase):
         print fibonacciPrinter.getAllLinesPrint()                            
         
 if __name__ == "__main__":
-    # import sys;sys.argv = ['', 'Test.testGetNum']
-    #
-#         print getLeftWidth(1, 1)
-#         print getLeftWidth(1, 1)
-
-#         print getNumLast(5)
     unittest.main()
