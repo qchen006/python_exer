@@ -26,6 +26,6 @@ if __name__ == "__main__":
     #
 #         print getLeftWidth(1, 1)
 #         print getLeftWidth(1, 1)
-        
+
 #         print getNumLast(5)
     unittest.main()
