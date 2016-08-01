@@ -1,5 +1,3 @@
-from numpy.f2py.auxfuncs import throw_error
-from zope.interface.tests.test_adapter import IF0
 import os
 
 class FibonacciPrinter:
@@ -15,7 +13,7 @@ class FibonacciPrinter:
         
     def getLeftWidth(self, row, column):
         if self.__eachWidth / 2 != 0:
-            throw_error
+            raise Exception("each width variable should be even")
         rowStartDiff = self.__eachWidth / 2   
         return (self.__totalRow - row) * rowStartDiff + (column - 1) * self.__eachWidth
         

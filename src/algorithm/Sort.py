@@ -1,5 +1,5 @@
 '''
-Merge sort
+Merge sort, quick sort, heap sort
 '''
 from datetime import datetime
 import random
@@ -29,15 +29,22 @@ def insert_sort(arr):
 
 def heap_sort(arr):
     h = heap(arr)
-    for i in range(len(arr)-1, -1, -1):
+
+    print 'after construct heap'
+    print h
+
+
+    for i in range(len(arr)-1, 0, -1):
         tmp = arr[0]
         arr[0] = arr[i]
         arr[i] = tmp
 
-        h.max_heap(0)
+        h.max_heap(0, i-1)
 
+        print h
+
+    print 'after sorting heap'
     print h
-
 
 
 
@@ -124,7 +131,7 @@ def random_int_list(start, stop, length):
 
 
 if __name__ == '__main__':
-    arr = random_int_list(1,100, 20)
+    arr = random_int_list(1,100, 60)
     # arr = [8, 7, 3, 3, 7]
     # arr = [12, 84, 21, 68, 13, 81]
     should_print = True
@@ -165,6 +172,7 @@ if __name__ == '__main__':
 
 
     print '================ heap sort starts================='
+
     if should_print:
         print "before heap sort :", arr
     t0 = datetime.now()
