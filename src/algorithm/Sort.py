@@ -34,6 +34,7 @@ def heap_sort(arr):
     print h
 
 
+    ## the last element with index 0, we do not
     for i in range(len(arr)-1, 0, -1):
         tmp = arr[0]
         arr[0] = arr[i]
