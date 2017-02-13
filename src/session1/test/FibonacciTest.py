@@ -44,8 +44,8 @@ class Test(unittest.TestCase):
         self.assertEqual(fibonacciPrinter.getLeftWidthLast(3), 7, "")
 
     def testPrintNum(self):
-        print fibonacciPrinter.getLinePrint(1)
-        print fibonacciPrinter.getAllLinesPrint()                            
+        print(fibonacciPrinter.getLinePrint(1))
+        print(fibonacciPrinter.getAllLinesPrint())                            
         
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testGetNum']

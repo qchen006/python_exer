@@ -35,7 +35,7 @@ class WordCollector(object):
                                 self.__addWordIfNecc(docId, word)
 
         except IOError:
-            print "file not exists"
+            print("file not exists")
             raise IOError("file not exists")
 
     def __addFilenameDocMapping(self, fileName):
@@ -77,7 +77,7 @@ class WordSearcher(object):
 
                 pipe.multi()
 
-                pipe.zinterstore(tempset, map(self._wordTranslate, words))
+                pipe.zinterstore(tempset, list(map(self._wordTranslate, words)))
                 pipe.zrevrange(tempset, 0, -1, False)
 
                 multiResults = pipe.execute()
@@ -85,13 +85,13 @@ class WordSearcher(object):
 
                 break
             except WatchError:
-                print "watcherror happens"
+                print("watcherror happens")
                 continue
             finally:
                 pipe.reset()
 
 
-        print "doc id set is "+ str(docIdSet)
+        print("doc id set is "+ str(docIdSet))
         result = self.__redisClient.hmget("filenames", docIdSet)
 
 
@@ -102,9 +102,9 @@ if __name__ == '__main__':
     wordCollector = WordCollector()
 
     abs_file_name = pkg_resources.resource_filename(__name__, "file")
-    print abs_file_name
+    print(abs_file_name)
     wordCollector.storeFileWords(abs_file_name)
 
     searcher = WordSearcher()
     words = list(["how", "are"])
-    print "files containing all the words are \n" + str(searcher.search(words))
+    print("files containing all the words are \n" + str(searcher.search(words)))

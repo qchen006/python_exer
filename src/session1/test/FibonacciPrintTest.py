@@ -19,7 +19,7 @@ class Test(unittest.TestCase):
         pass
 
     def testPrintNum(self):
-        print fibonacciPrinter.getAllLinesPrint()                            
+        print(fibonacciPrinter.getAllLinesPrint())                            
         
 if __name__ == "__main__":
     unittest.main()

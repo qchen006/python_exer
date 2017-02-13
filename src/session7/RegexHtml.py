@@ -17,4 +17,4 @@ htmlContent = """
    
 result = re.search(regexStr, htmlContent, 
               re.M|re.I) 
-print result.groups()
+print(result.groups())

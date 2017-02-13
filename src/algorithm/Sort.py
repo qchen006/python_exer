@@ -30,8 +30,8 @@ def insert_sort(arr):
 def heap_sort(arr):
     h = heap(arr)
 
-    print 'after construct heap'
-    print h
+    print('after construct heap')
+    print(h)
 
 
     ## the last element with index 0, we do not
@@ -42,10 +42,10 @@ def heap_sort(arr):
 
         h.max_heap(0, i-1)
 
-        print h
+        print(h)
 
-    print 'after sorting heap'
-    print h
+    print('after sorting heap')
+    print(h)
 
 
 
@@ -94,8 +94,8 @@ def merge_sort(arr):
     if(n==1):
         return arr
     else:
-        firstPart =  merge_sort(arr[:n/2])
-        secondpart = merge_sort(arr[(n/2):])
+        firstPart =  merge_sort(arr[:int(n/2)])
+        secondpart = merge_sort(arr[int((n/2)):])
 
         return __merge_two(firstPart,secondpart)
 
@@ -141,49 +141,49 @@ if __name__ == '__main__':
     # print arr[0:lenth/2]
     # print arr[lenth/2:lenth]
 
-    print '================ merge sort starts================='
+    print('================ merge sort starts=================')
     if should_print:
-        print "before merge sort :", arr
+        print("before merge sort :", arr)
 
     t0 = datetime.now()
-    print "@%s, {%s} start" % (t0, 'merge_sort')
+    print("@%s, {%s} start" % (t0, 'merge_sort'))
 
     merge_sort(arr)
 
     t1 = datetime.now()
-    print "@%s, {%s} end" % (t1, 'merge_sort')
-    print "@%.3fs taken for {%s}" % ((t1-t0).seconds, 'merge_sort')
+    print("@%s, {%s} end" % (t1, 'merge_sort'))
+    print("@%.3fs taken for {%s}" % ((t1-t0).seconds, 'merge_sort'))
 
 
 
-    print '================ quick sort starts================='
+    print('================ quick sort starts=================')
     if should_print:
-        print "before quick sort :", arr
+        print("before quick sort :", arr)
     t0 = datetime.now()
-    print "@%s, {%s} start" % (t0, 'quick_sort')
+    print("@%s, {%s} start" % (t0, 'quick_sort'))
 
     quick_sort(arr,0,len(arr)-1)
 
     t1 = datetime.now()
-    print "@%s, {%s} end" % (t1, 'quick_sort')
-    print "@%.3fs taken for {%s}" % ((t1-t0).seconds, 'quick_sort')
+    print("@%s, {%s} end" % (t1, 'quick_sort'))
+    print("@%.3fs taken for {%s}" % ((t1-t0).seconds, 'quick_sort'))
 
     if should_print:
-        print "after quick sort :", arr
+        print("after quick sort :", arr)
 
 
-    print '================ heap sort starts================='
+    print('================ heap sort starts=================')
 
     if should_print:
-        print "before heap sort :", arr
+        print("before heap sort :", arr)
     t0 = datetime.now()
-    print "@%s, {%s} start" % (t0, 'heap sort')
+    print("@%s, {%s} start" % (t0, 'heap sort'))
 
     heap_sort(arr)
 
     t1 = datetime.now()
-    print "@%s, {%s} end" % (t1, 'heap sort')
-    print "@%.3fs taken for {%s}" % ((t1-t0).seconds, 'heap sort')
+    print("@%s, {%s} end" % (t1, 'heap sort'))
+    print("@%.3fs taken for {%s}" % ((t1-t0).seconds, 'heap sort'))
 
     if should_print:
-        print "after heap sort :", arr
+        print("after heap sort :", arr)

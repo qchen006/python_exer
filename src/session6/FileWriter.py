@@ -7,7 +7,7 @@ class FileWriter(threading.Thread):
         self.__num__=num
         
     def run(self):
-        for i in xrange(10):  
+        for i in range(10):  
             output = open(self.__fileName__, 'a')
             output.write("teststr"+bytes(self.__num__))
             output.flush()

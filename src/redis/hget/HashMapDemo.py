@@ -16,8 +16,8 @@ redisClient.hset('user:c', 'gender', 'M')
 
 nameA = redisClient.hget('user:a', 'name')
 
-print 'name for user a is ' + nameA
-print 'age for user b is ' + redisClient.hget('user:b', 'age')
+print('name for user a is ' + nameA)
+print('age for user b is ' + redisClient.hget('user:b', 'age'))
 
 userList = list(['user:a','user:b',"user:c"])
 
@@ -38,31 +38,31 @@ redisClient.sadd("circle:game:dota", "user:b")
 redisClient.sadd("circle:game:dota", "user:c")
 
 circleLolSet = redisClient.smembers("circle:game:lol")
-print 'member in circle game<LOL> '+ str(circleLolSet)
+print('member in circle game<LOL> '+ str(circleLolSet))
 
-print 'they are:'
+print('they are:')
 
 for gameMember in circleLolSet:
-    print '     '+ redisClient.hget(gameMember,'name')
+    print('     '+ redisClient.hget(gameMember,'name'))
 
 
-print '================================'
+print('================================')
 
 circleDotaSet = redisClient.smembers("circle:game:dota")
-print 'member in circle game<DOTA> '+ str(circleDotaSet)
+print('member in circle game<DOTA> '+ str(circleDotaSet))
 
-print 'they are:'
+print('they are:')
 
 for gameMember in circleDotaSet:
-    print '     '+ redisClient.hget(gameMember,'name')
+    print('     '+ redisClient.hget(gameMember,'name'))
 
 
-print '================================'
+print('================================')
 
 gameInterSet = redisClient.sinter("circle:game:lol","circle:game:dota")
-print 'member in two games '+ str(gameInterSet)
+print('member in two games '+ str(gameInterSet))
 
-print 'they are:'
+print('they are:')
 
 for gameMember in gameInterSet:
-    print '     '+ redisClient.hget(gameMember,'name')
+    print('     '+ redisClient.hget(gameMember,'name'))

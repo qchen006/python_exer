@@ -17,14 +17,14 @@ if __name__ == '__main__':
     prompt = prompt + "3: Exit" + os.linesep
     
     while True:
-        x = raw_input(prompt)  # raw_inut reads as string, while input() reads as integer
+        x = input(prompt)  # raw_inut reads as string, while input() reads as integer
         if x == '1':
-            fPrint = FibonacciPrinter(17, 8)
-            print fPrint.getAllLinesPrint()
+            fPrint = FibonacciPrinter(3, 4)
+            print(fPrint.getAllLinesPrint())
         elif x == '2':
             LovePrinter.printLove()
         elif x == '3':
-            print "Exiting system"
+            print("Exiting system")
             sys.exit()
         else:
-            print "Please input 1 , 2 or 3"
+            print("Please input 1 , 2 or 3")

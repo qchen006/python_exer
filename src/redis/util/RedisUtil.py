@@ -9,4 +9,4 @@ if __name__ == '__main__':
     for expression in expressions:
         for key in redisClient.keys(expression):
             redisClient.delete(key)
-            print "deleted key "+key
+            print("deleted key "+key)

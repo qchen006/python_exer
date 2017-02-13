@@ -12,10 +12,12 @@ class FibonacciPrinter:
             return self.getNum(row - 1, column - 1) + self.getNum(row - 1, column);
         
     def getLeftWidth(self, row, column):
-        if self.__eachWidth / 2 != 0:
+        if int(self.__eachWidth % 2) != 0:
+            print("self.__eachWidth is ", self.__eachWidth)
+            print("self.__eachWidth/2 is", self.__eachWidth/2)
             raise Exception("each width variable should be even")
         rowStartDiff = self.__eachWidth / 2   
-        return (self.__totalRow - row) * rowStartDiff + (column - 1) * self.__eachWidth
+        return int((self.__totalRow - row) * rowStartDiff + (column - 1) * self.__eachWidth)
         
     def getNumLast(self, row):
         if row == 1:
@@ -23,7 +25,7 @@ class FibonacciPrinter:
         elif row == 2:
             return 1
         else:
-            return self.getNumLast(row - 1) + self.getNumLast(row - 2) 
+            return int(self.getNumLast(row - 1) + self.getNumLast(row - 2))
     
     def getLeftWidthLast(self, row):
         rowStartDiff = self.__eachWidth / 2  
@@ -61,5 +63,5 @@ class FibonacciPrinter:
     def getAllLinesPrint(self):
         result = ''
         for i in range(0, self.__totalRow):
-            result = result + str(self.getLinePrint(i + 1))
+            result = result.join(self.getLinePrint(i + 1))
         return result

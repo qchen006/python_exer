@@ -54,5 +54,5 @@ def printLove():
         
         tmp = tmp + os.linesep
         
-    print tmp
+    print(tmp)
 

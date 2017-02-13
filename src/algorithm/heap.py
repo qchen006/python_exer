@@ -97,7 +97,7 @@ class heap:
         # if self.__eachWidth / 2 != 0:
         #     raise Exception("each width variable should be even")
         rowStartDiff = self.unit_width * (int(math.pow(2,self.__height -1))+1) / row
-        return rowStartDiff
+        return int(rowStartDiff)
 
 
 if __name__ == '__main__':
@@ -105,4 +105,4 @@ if __name__ == '__main__':
     arr = [12, 42, 48, 51, 55, 82]
     h = heap(arr)
     # h._max_heap(0)
-    print h
+    print(h)

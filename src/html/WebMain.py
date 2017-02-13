@@ -1,5 +1,3 @@
-import web
-from web import form
 
 render = web.template.render('templates/')
 
@@ -43,7 +41,7 @@ class search:
     def POST(self):
         inputParameters = web.input()
         for inputParameter in inputParameters:
-            print "Key : " + inputParameter + " Value : " + inputParameters.get(inputParameter)
+            print("Key : " + inputParameter + " Value : " + inputParameters.get(inputParameter))
 
         # todo : the search key "hostname" is hardcoded here, should refine later
         searchKey = inputParameters.get("hostname")

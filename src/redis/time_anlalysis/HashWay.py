@@ -23,7 +23,7 @@ def gnerateData(year):
 
         yearStart = yearStart + datetime.timedelta(days=1)
 
-    print "data generated"
+    print("data generated")
 
 
 def get_total_hit(id):
@@ -49,5 +49,5 @@ def top_clients(period="total", limit=3):
 if __name__ == '__main__':
     #gnerateData(2016)
 
-    print get_hit_between('001', '2016-02-01','2016-03-01')
-    print top_clients(limit=6)
+    print(get_hit_between('001', '2016-02-01','2016-03-01'))
+    print(top_clients(limit=6))
